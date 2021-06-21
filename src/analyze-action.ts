@@ -82,17 +82,15 @@ async function uploadDatabases(
       repo: repositoryNwo.repo,
     });
   } catch (e) {
-    console.log(e);
-    if (util.isHTTPError(e)) {
-      if (e.status === 404) {
-        logger.debug(
-          "Repository is not opted in to database uploads. Skipping upload."
-        );
-      } else {
-        logger.debug(`Skipping database upload due to unknown error: ${e}`);
-      }
-      return;
+    if (util.isHTTPError(e) && e.status === 404) {
+      logger.debug(
+        "Repository is not opted in to database uploads. Skipping upload."
+      );
+    } else {
+      console.log(e);
+      logger.info(`Skipping database upload due to unknown error: ${e}`);
     }
+    return;
   }
 
   const codeql = getCodeQL(config.codeQLCmd);
