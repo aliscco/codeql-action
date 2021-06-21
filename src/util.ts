@@ -479,9 +479,13 @@ export function getRequiredEnvParam(paramName: string): string {
   return value;
 }
 
-export interface HTTPError {
-  status: number;
-  message?: string;
+export class HTTPError extends Error {
+  public status: number;
+
+  constructor(message: string, status: number) {
+    super(message);
+    this.status = status;
+  }
 }
 
 export function isHTTPError(arg: any): arg is HTTPError {
