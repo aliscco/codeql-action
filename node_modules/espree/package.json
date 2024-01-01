@@ -28,7 +28,7 @@
     "eslint": "^6.0.1",
     "eslint-config-eslint": "^5.0.1",
     "eslint-plugin-node": "^9.1.0",
-    "eslint-release": "^1.0.0",
+    "eslint-release": "^2.0.0",
     "esprima": "latest",
     "esprima-fb": "^8001.2001.0-dev-harmony-fb",
     "json-diff": "^0.5.4",
