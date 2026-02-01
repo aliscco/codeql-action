@@ -52,7 +52,7 @@
     "test": "./node_modules/.bin/mocha"
   },
   "devDependencies": {
-    "mocha": "5.2.0",
+    "mocha": "10.6.0",
     "should": "13.2.1"
   },
   "files": [
